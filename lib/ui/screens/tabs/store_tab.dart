@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/entities/grocery_deals_entity.dart';
+
+import '../../widgets/grocery_deals_card.dart';
 
 class StoreTab extends StatefulWidget {
   const StoreTab({super.key});
@@ -17,6 +20,29 @@ class _StoreTabState extends State<StoreTab> {
     {'icon': Icon(Icons.toys_rounded), 'label': 'Toy'},
     {'icon': Icon(Icons.school_rounded), 'label': 'Education'},
     {'icon': Icon(Icons.devices), 'label': 'Electronics'},
+  ];
+
+  final List<GroceryDealsEntity> groceryList = [
+    GroceryDealsEntity(
+        groceryName: 'Carrots',
+        groceryPrice: 200,
+        groceryWeight: 1,
+        groceryImage: 'assets/images/carrot.jpg'),
+    GroceryDealsEntity(
+        groceryName: 'Apple',
+        groceryPrice: 400,
+        groceryWeight: 2,
+        groceryImage: 'assets/images/apple.jpeg'),
+    GroceryDealsEntity(
+        groceryName: 'Orange',
+        groceryPrice: 300,
+        groceryWeight: 1,
+        groceryImage: 'assets/images/orange.jpg'),
+    GroceryDealsEntity(
+        groceryName: 'Broccoli',
+        groceryPrice: 200,
+        groceryWeight: 1,
+        groceryImage: 'assets/images/broccoli.jpg'),
   ];
 
   @override
@@ -69,11 +95,13 @@ class _StoreTabState extends State<StoreTab> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text('Grocery Member Deals', style: TextStyle(
-                    color: Colors.black54,
-                    fontSize: 15,
-                    fontWeight: FontWeight.w500
-                ),),
+                Text(
+                  'Grocery Member Deals',
+                  style: TextStyle(
+                      color: Colors.black54,
+                      fontSize: 15,
+                      fontWeight: FontWeight.w500),
+                ),
                 TextButton(
                   onPressed: () {},
                   child: Text('View All >'),
@@ -82,247 +110,13 @@ class _StoreTabState extends State<StoreTab> {
             ),
           ),
           SingleChildScrollView(
-            scrollDirection: Axis.horizontal,
-            child: Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    height: 180,
-                    width: 120,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          top: 30,
-                          left: 5,
-                          child: Image.asset('assets/images/carrot.jpg', height: 100, width: 100,),
-                        ),
-                        Positioned(
-                          top: 5,
-                          left: 90,
-                          child: Icon(Icons.favorite_border_rounded, color: Colors.black54,),
-                        ),
-                        Positioned(
-                          top: 10,
-                          left: 10,
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 18,
-                            width: 32,
-                            decoration: BoxDecoration(
-                              color: Colors.grey.shade300,
-                              borderRadius: BorderRadius.circular(5)
-                            ),
-                            child: Text('1KG', style: TextStyle(
-                              fontSize: 12,
-                              color: Colors.black54
-                            ),),
-                          ),
-                        ),
-                        Positioned(
-                          top: 120,
-                          left: 10,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Carrots', style: TextStyle(
-                                color: Colors.black38,
-                                letterSpacing: 1
-                              ),),
-                              Text('\$200.0', style: TextStyle(
-                                color: Colors.black54,
-                                fontWeight: FontWeight.w500
-                              ),)
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    height: 180,
-                    width: 120,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          top: 30,
-                          left: 5,
-                          child: Image.asset('assets/images/carrot.jpg', height: 100, width: 100,),
-                        ),
-                        Positioned(
-                          top: 5,
-                          left: 90,
-                          child: Icon(Icons.favorite_border_rounded, color: Colors.black54,),
-                        ),
-                        Positioned(
-                          top: 10,
-                          left: 10,
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 18,
-                            width: 32,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: BorderRadius.circular(5)
-                            ),
-                            child: Text('1KG', style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black54
-                            ),),
-                          ),
-                        ),
-                        Positioned(
-                          top: 120,
-                          left: 10,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Carrots', style: TextStyle(
-                                  color: Colors.black38,
-                                  letterSpacing: 1
-                              ),),
-                              Text('\$200.0', style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w500
-                              ),)
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    height: 180,
-                    width: 120,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          top: 30,
-                          left: 5,
-                          child: Image.asset('assets/images/carrot.jpg', height: 100, width: 100,),
-                        ),
-                        Positioned(
-                          top: 5,
-                          left: 90,
-                          child: Icon(Icons.favorite_border_rounded, color: Colors.black54,),
-                        ),
-                        Positioned(
-                          top: 10,
-                          left: 10,
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 18,
-                            width: 32,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: BorderRadius.circular(5)
-                            ),
-                            child: Text('1KG', style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black54
-                            ),),
-                          ),
-                        ),
-                        Positioned(
-                          top: 120,
-                          left: 10,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Carrots', style: TextStyle(
-                                  color: Colors.black38,
-                                  letterSpacing: 1
-                              ),),
-                              Text('\$200.0', style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w500
-                              ),)
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-                Padding(
-                  padding: const EdgeInsets.all(10),
-                  child: Container(
-                    height: 180,
-                    width: 120,
-                    decoration: BoxDecoration(
-                        color: Colors.white,
-                        borderRadius: BorderRadius.circular(10)
-                    ),
-                    child: Stack(
-                      children: [
-                        Positioned(
-                          top: 30,
-                          left: 5,
-                          child: Image.asset('assets/images/carrot.jpg', height: 100, width: 100,),
-                        ),
-                        Positioned(
-                          top: 5,
-                          left: 90,
-                          child: Icon(Icons.favorite_border_rounded, color: Colors.black54,),
-                        ),
-                        Positioned(
-                          top: 10,
-                          left: 10,
-                          child: Container(
-                            alignment: Alignment.center,
-                            height: 18,
-                            width: 32,
-                            decoration: BoxDecoration(
-                                color: Colors.grey.shade300,
-                                borderRadius: BorderRadius.circular(5)
-                            ),
-                            child: Text('1KG', style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.black54
-                            ),),
-                          ),
-                        ),
-                        Positioned(
-                          top: 120,
-                          left: 10,
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              Text('Carrots', style: TextStyle(
-                                  color: Colors.black38,
-                                  letterSpacing: 1
-                              ),),
-                              Text('\$200.0', style: TextStyle(
-                                  color: Colors.black54,
-                                  fontWeight: FontWeight.w500
-                              ),)
-                            ],
-                          ),
-                        )
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  for(GroceryDealsEntity grocery in groceryList)
+                    GroceryDealsCard(groceryDealsEntity: grocery)
+                ],
+              )
           )
         ],
       ),
