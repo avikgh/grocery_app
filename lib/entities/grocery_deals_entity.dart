@@ -1,7 +1,7 @@
 class GroceryDealsEntity {
   final String groceryName;
   final int groceryPrice;
-  final int groceryWeight;
+  final String groceryWeight;
   final String groceryImage;
 
   GroceryDealsEntity(

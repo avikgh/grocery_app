@@ -26,29 +26,52 @@ class _StoreTabState extends State<StoreTab> {
     GroceryDealsEntity(
         groceryName: 'Carrots',
         groceryPrice: 200,
-        groceryWeight: 1,
+        groceryWeight: '1KG',
         groceryImage: 'assets/images/carrot.jpg'),
     GroceryDealsEntity(
         groceryName: 'Apple',
         groceryPrice: 400,
-        groceryWeight: 2,
+        groceryWeight: '2KG',
         groceryImage: 'assets/images/apple.jpeg'),
     GroceryDealsEntity(
         groceryName: 'Orange',
         groceryPrice: 300,
-        groceryWeight: 1,
+        groceryWeight: '2KG',
         groceryImage: 'assets/images/orange.jpg'),
     GroceryDealsEntity(
         groceryName: 'Broccoli',
         groceryPrice: 200,
-        groceryWeight: 1,
+        groceryWeight: '1KG',
         groceryImage: 'assets/images/broccoli.jpg'),
+  ];
+
+  final List<GroceryDealsEntity> liquorList = [
+    GroceryDealsEntity(
+        groceryName: 'Black Label',
+        groceryPrice: 200,
+        groceryWeight: '1L',
+        groceryImage: 'assets/images/black.jpeg'),
+    GroceryDealsEntity(
+        groceryName: 'Nemiroff',
+        groceryPrice: 400,
+        groceryWeight: '1.25L',
+        groceryImage: 'assets/images/nemiroff.jpg'),
+    GroceryDealsEntity(
+        groceryName: 'Teachers',
+        groceryPrice: 300,
+        groceryWeight: '0.75L',
+        groceryImage: 'assets/images/teachers.jpg'),
+    GroceryDealsEntity(
+        groceryName: 'Chivas Regal',
+        groceryPrice: 200,
+        groceryWeight: '0.75L',
+        groceryImage: 'assets/images/chivas.jpg'),
   ];
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.black12,
+      backgroundColor: Color(0xFFE6EEF5),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -90,33 +113,47 @@ class _StoreTabState extends State<StoreTab> {
               ],
             ),
           ),
-          Padding(
-            padding: const EdgeInsets.only(left: 10, right: 10),
+          _buildTitleOfDeals('Grocery Member Deals'),
+          SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
             child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                Text(
-                  'Grocery Member Deals',
-                  style: TextStyle(
-                      color: Colors.black54,
-                      fontSize: 15,
-                      fontWeight: FontWeight.w500),
-                ),
-                TextButton(
-                  onPressed: () {},
-                  child: Text('View All >'),
-                )
+                for (GroceryDealsEntity grocery in groceryList)
+                  GroceryDealsCard(groceryDealsEntity: grocery)
               ],
             ),
           ),
+          _buildTitleOfDeals('Liquor Member Deals'),
           SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-              child: Row(
-                children: [
-                  for(GroceryDealsEntity grocery in groceryList)
-                    GroceryDealsCard(groceryDealsEntity: grocery)
-                ],
-              )
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: [
+                for (GroceryDealsEntity liquor in liquorList)
+                  GroceryDealsCard(groceryDealsEntity: liquor)
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  Padding _buildTitleOfDeals(String title) {
+    return Padding(
+      padding: const EdgeInsets.only(left: 10, right: 10),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(
+            title,
+            style: TextStyle(
+                color: Colors.black54,
+                fontSize: 15,
+                fontWeight: FontWeight.w500),
+          ),
+          TextButton(
+            onPressed: () {},
+            child: Text('View All >'),
           )
         ],
       ),
