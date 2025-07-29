@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:grocery_app/entities/grocery_deals_entity.dart';
+import 'package:grocery_app/ui/screens/cold_drink_screen.dart';
+import 'package:grocery_app/ui/screens/view_items_screen.dart';
 
 import '../../widgets/grocery_deals_card.dart';
 
@@ -113,7 +115,7 @@ class _StoreTabState extends State<StoreTab> {
               ],
             ),
           ),
-          _buildTitleOfDeals('Grocery Member Deals'),
+          _buildTitleOfDeals('Grocery Member Deals', ViewItemScreen(groceryList: groceryList, title: 'Grocery',)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -123,7 +125,7 @@ class _StoreTabState extends State<StoreTab> {
               ],
             ),
           ),
-          _buildTitleOfDeals('Liquor Member Deals'),
+          _buildTitleOfDeals('Liquor Member Deals', ViewItemScreen(groceryList: liquorList, title: 'Liquor',)),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -138,7 +140,7 @@ class _StoreTabState extends State<StoreTab> {
     );
   }
 
-  Padding _buildTitleOfDeals(String title) {
+  Padding _buildTitleOfDeals(String title, Widget screen) {
     return Padding(
       padding: const EdgeInsets.only(left: 10, right: 10),
       child: Row(
@@ -152,7 +154,9 @@ class _StoreTabState extends State<StoreTab> {
                 fontWeight: FontWeight.w500),
           ),
           TextButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+            },
             child: Text('View All >'),
           )
         ],
@@ -172,7 +176,9 @@ class _StoreTabState extends State<StoreTab> {
             borderRadius: BorderRadius.circular(50),
           ),
           child: IconButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) => ColdDrinkScreen()));
+            },
             icon: icon,
             style: IconButton.styleFrom(iconSize: 25),
           ),

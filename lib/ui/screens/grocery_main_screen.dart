@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/ui/screens/tabs/profile_tab.dart';
 import 'package:grocery_app/ui/screens/tabs/store_tab.dart';
 
 class GroceryMainScreen extends StatelessWidget {
@@ -11,29 +12,17 @@ class GroceryMainScreen extends StatelessWidget {
       child: Scaffold(
         appBar: AppBar(
           title: Text('Store'),
-          titleTextStyle: TextStyle(
-            color: Colors.white,
-            fontSize: 20,
-            fontWeight: FontWeight.w500
-          ),
-          titleSpacing: 0,
           leading: IconButton(
-            onPressed: () {
-
-            },
+            onPressed: () {},
             icon: Icon(Icons.menu, color: Colors.white,),
           ),
           actions: [
             IconButton(
-              onPressed: () {
-
-              },
+              onPressed: () {},
               icon: Icon(Icons.search, color: Colors.white,),
             ),
             IconButton(
-              onPressed: () {
-
-              },
+              onPressed: () {},
               icon: Icon(Icons.notifications_none, color: Colors.white,),
             ),
           ],
@@ -52,7 +41,7 @@ class GroceryMainScreen extends StatelessWidget {
             StoreTab(),
             StoreTab(),
             StoreTab(),
-            StoreTab()
+            ProfileTab()
           ],
         ),
       ),
