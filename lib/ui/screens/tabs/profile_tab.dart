@@ -10,27 +10,42 @@ class ProfileTab extends StatefulWidget {
 class _ProfileTabState extends State<ProfileTab> {
   final List<Map<String, dynamic>> _listOfOption = [
     {
-      'icon': Icon(Icons.account_circle_outlined, color: Colors.white,),
+      'icon': Icon(
+        Icons.account_circle_outlined,
+        color: Colors.white,
+      ),
       'title': 'Recipient Details',
       'color': Color(0xFF775CE6)
     },
     {
-      'icon': Icon(Icons.local_shipping_outlined, color: Colors.white,),
+      'icon': Icon(
+        Icons.local_shipping_outlined,
+        color: Colors.white,
+      ),
       'title': 'Delivery Address',
       'color': Color(0xFFf29f18)
     },
     {
-      'icon': Icon(Icons.monetization_on_outlined, color: Colors.white,),
+      'icon': Icon(
+        Icons.monetization_on_outlined,
+        color: Colors.white,
+      ),
       'title': 'Payment Method',
       'color': Color(0xFFf27653)
     },
     {
-      'icon': Icon(Icons.lock_open_outlined, color: Colors.white,),
+      'icon': Icon(
+        Icons.lock_open_outlined,
+        color: Colors.white,
+      ),
       'title': 'Change Password',
       'color': Color(0xFFf23f63)
     },
     {
-      'icon': Icon(Icons.logout, color: Colors.white,),
+      'icon': Icon(
+        Icons.logout,
+        color: Colors.white,
+      ),
       'title': 'Logout',
       'color': Color(0xFFf02648)
     },
@@ -48,9 +63,7 @@ class _ProfileTabState extends State<ProfileTab> {
               height: 125,
               width: double.maxFinite,
               decoration: BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.circular(10)
-              ),
+                  color: Colors.white, borderRadius: BorderRadius.circular(10)),
               child: Stack(
                 children: [
                   Positioned(
@@ -112,11 +125,15 @@ class _ProfileTabState extends State<ProfileTab> {
                           radius: 22,
                           backgroundColor: _listOfOption[index]['color'],
                           child: _listOfOption[index]['icon']),
-                      title: Text(_listOfOption[index]['title'], style: TextStyle(
+                      title: Text(
+                        _listOfOption[index]['title'],
+                        style: TextStyle(
+                            color: Colors.black54, fontWeight: FontWeight.w500),
+                      ),
+                      trailing: Icon(
+                        Icons.chevron_right,
                         color: Colors.black54,
-                        fontWeight: FontWeight.w500
-                      ),),
-                      trailing: Icon(Icons.chevron_right, color: Colors.black54,),
+                      ),
                     );
                   },
                   separatorBuilder: (_, __) {

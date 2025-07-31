@@ -14,35 +14,59 @@ class GroceryMainScreen extends StatelessWidget {
           title: Text('Store'),
           leading: IconButton(
             onPressed: () {},
-            icon: Icon(Icons.menu, color: Colors.white,),
+            icon: Icon(
+              Icons.menu,
+              color: Colors.white,
+            ),
           ),
           actions: [
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.search, color: Colors.white,),
+              icon: Icon(
+                Icons.search,
+                color: Colors.white,
+              ),
             ),
             IconButton(
               onPressed: () {},
-              icon: Icon(Icons.notifications_none, color: Colors.white,),
+              icon: Icon(
+                Icons.notifications_none,
+                color: Colors.white,
+              ),
             ),
           ],
           bottom: TabBar(
-            indicatorSize: TabBarIndicatorSize.tab,
-            indicatorColor: Colors.white,
-            tabs: [
-            Tab(icon: Icon(Icons.storefront, color: Colors.white,),),
-            Tab(icon: Icon(Icons.shopping_basket, color: Colors.white,),),
-            Tab(icon: Icon(Icons.favorite_border, color: Colors.white,),),
-            Tab(icon: Icon(Icons.account_circle_outlined, color: Colors.white,),)
-            ]),
+              indicatorSize: TabBarIndicatorSize.tab,
+              indicatorColor: Colors.white,
+              tabs: [
+                Tab(
+                  icon: Icon(
+                    Icons.storefront,
+                    color: Colors.white,
+                  ),
+                ),
+                Tab(
+                  icon: Icon(
+                    Icons.shopping_basket,
+                    color: Colors.white,
+                  ),
+                ),
+                Tab(
+                  icon: Icon(
+                    Icons.favorite_border,
+                    color: Colors.white,
+                  ),
+                ),
+                Tab(
+                  icon: Icon(
+                    Icons.account_circle_outlined,
+                    color: Colors.white,
+                  ),
+                )
+              ]),
         ),
         body: TabBarView(
-          children: [
-            StoreTab(),
-            StoreTab(),
-            StoreTab(),
-            ProfileTab()
-          ],
+          children: [StoreTab(), StoreTab(), StoreTab(), ProfileTab()],
         ),
       ),
     );

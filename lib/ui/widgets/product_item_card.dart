@@ -44,13 +44,13 @@ class _ProductItemCardState extends State<ProductItemCard> {
                     },
                     child: _isFavorite
                         ? Icon(
-                      Icons.favorite,
-                      color: Colors.red,
-                    )
+                            Icons.favorite,
+                            color: Colors.red,
+                          )
                         : Icon(
-                      Icons.favorite_border_rounded,
-                      color: Colors.black54,
-                    ))),
+                            Icons.favorite_border_rounded,
+                            color: Colors.black54,
+                          ))),
             Positioned(
               top: 10,
               left: 10,

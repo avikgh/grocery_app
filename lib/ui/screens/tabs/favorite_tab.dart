@@ -4,7 +4,8 @@ import 'package:grocery_app/entities/grocery_deals_entity.dart';
 import '../../widgets/product_item_card.dart';
 
 class FavoriteTab extends StatefulWidget {
-  const FavoriteTab({super.key, required this.groceryList, required this.liquorList});
+  const FavoriteTab(
+      {super.key, required this.groceryList, required this.liquorList});
 
   final List<GroceryDealsEntity> groceryList;
   final List<GroceryDealsEntity> liquorList;
@@ -14,7 +15,6 @@ class FavoriteTab extends StatefulWidget {
 }
 
 class _FavoriteTabState extends State<FavoriteTab> {
-
   List<GroceryDealsEntity> listOfItems = [];
   @override
   Widget build(BuildContext context) {
@@ -27,10 +27,10 @@ class _FavoriteTabState extends State<FavoriteTab> {
               child: GridView.builder(
                 itemCount: widget.groceryList.length,
                 gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 2
-                ),
+                    crossAxisCount: 2),
                 itemBuilder: (context, index) {
-                  return ProductItemCard(groceryDealsEntity: listOfItems[index]);
+                  return ProductItemCard(
+                      groceryDealsEntity: listOfItems[index]);
                 },
               ),
             ),
@@ -47,10 +47,10 @@ class _FavoriteTabState extends State<FavoriteTab> {
   }
 
   void _mergeAllList() {
-    for(int i=0;i<widget.groceryList.length;i++) {
+    for (int i = 0; i < widget.groceryList.length; i++) {
       listOfItems.add(widget.groceryList[i]);
     }
-    for(int i=0;i<widget.liquorList.length;i++) {
+    for (int i = 0; i < widget.liquorList.length; i++) {
       listOfItems.add(widget.liquorList[i]);
     }
   }

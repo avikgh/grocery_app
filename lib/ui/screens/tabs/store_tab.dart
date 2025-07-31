@@ -115,7 +115,12 @@ class _StoreTabState extends State<StoreTab> {
               ],
             ),
           ),
-          _buildTitleOfDeals('Grocery Member Deals', ViewItemScreen(groceryList: groceryList, title: 'Grocery',)),
+          _buildTitleOfDeals(
+              'Grocery Member Deals',
+              ViewItemScreen(
+                groceryList: groceryList,
+                title: 'Grocery',
+              )),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -125,7 +130,12 @@ class _StoreTabState extends State<StoreTab> {
               ],
             ),
           ),
-          _buildTitleOfDeals('Liquor Member Deals', ViewItemScreen(groceryList: liquorList, title: 'Liquor',)),
+          _buildTitleOfDeals(
+              'Liquor Member Deals',
+              ViewItemScreen(
+                groceryList: liquorList,
+                title: 'Liquor',
+              )),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
@@ -155,7 +165,8 @@ class _StoreTabState extends State<StoreTab> {
           ),
           TextButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => screen));
+              Navigator.push(
+                  context, MaterialPageRoute(builder: (context) => screen));
             },
             child: Text('View All >'),
           )
@@ -177,7 +188,8 @@ class _StoreTabState extends State<StoreTab> {
           ),
           child: IconButton(
             onPressed: () {
-              Navigator.push(context, MaterialPageRoute(builder: (context) => ColdDrinkScreen()));
+              Navigator.push(context,
+                  MaterialPageRoute(builder: (context) => ColdDrinkScreen()));
             },
             icon: icon,
             style: IconButton.styleFrom(iconSize: 25),
