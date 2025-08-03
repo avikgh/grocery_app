@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:grocery_app/data/product_data.dart';
 import 'package:grocery_app/entities/grocery_deals_entity.dart';
 import 'package:grocery_app/ui/screens/cold_drink_screen.dart';
 import 'package:grocery_app/ui/screens/view_items_screen.dart';
-
 import '../../widgets/grocery_deals_card.dart';
 
 class StoreTab extends StatefulWidget {
@@ -13,6 +13,8 @@ class StoreTab extends StatefulWidget {
 }
 
 class _StoreTabState extends State<StoreTab> {
+  final ProductData _productData = ProductData();
+
   final List<Map<String, dynamic>> _categories = [
     {'icon': Icon(Icons.house_rounded), 'label': 'HouseHold'},
     {'icon': Icon(Icons.local_grocery_store), 'label': 'Grocery'},
@@ -22,52 +24,6 @@ class _StoreTabState extends State<StoreTab> {
     {'icon': Icon(Icons.toys_rounded), 'label': 'Toy'},
     {'icon': Icon(Icons.school_rounded), 'label': 'Education'},
     {'icon': Icon(Icons.devices), 'label': 'Electronics'},
-  ];
-
-  final List<GroceryDealsEntity> groceryList = [
-    GroceryDealsEntity(
-        groceryName: 'Carrots',
-        groceryPrice: 200,
-        groceryWeight: '1KG',
-        groceryImage: 'assets/images/carrot.jpg'),
-    GroceryDealsEntity(
-        groceryName: 'Apple',
-        groceryPrice: 400,
-        groceryWeight: '2KG',
-        groceryImage: 'assets/images/apple.jpeg'),
-    GroceryDealsEntity(
-        groceryName: 'Orange',
-        groceryPrice: 300,
-        groceryWeight: '2KG',
-        groceryImage: 'assets/images/orange.jpg'),
-    GroceryDealsEntity(
-        groceryName: 'Broccoli',
-        groceryPrice: 200,
-        groceryWeight: '1KG',
-        groceryImage: 'assets/images/broccoli.jpg'),
-  ];
-
-  final List<GroceryDealsEntity> liquorList = [
-    GroceryDealsEntity(
-        groceryName: 'Black Label',
-        groceryPrice: 200,
-        groceryWeight: '1L',
-        groceryImage: 'assets/images/black.jpeg'),
-    GroceryDealsEntity(
-        groceryName: 'Nemiroff',
-        groceryPrice: 400,
-        groceryWeight: '1.25L',
-        groceryImage: 'assets/images/nemiroff.jpg'),
-    GroceryDealsEntity(
-        groceryName: 'Teachers',
-        groceryPrice: 300,
-        groceryWeight: '0.75L',
-        groceryImage: 'assets/images/teachers.jpg'),
-    GroceryDealsEntity(
-        groceryName: 'Chivas Regal',
-        groceryPrice: 200,
-        groceryWeight: '0.75L',
-        groceryImage: 'assets/images/chivas.jpg'),
   ];
 
   @override
@@ -118,14 +74,14 @@ class _StoreTabState extends State<StoreTab> {
           _buildTitleOfDeals(
               'Grocery Member Deals',
               ViewItemScreen(
-                groceryList: groceryList,
+                groceryList: _productData.groceryList,
                 title: 'Grocery',
               )),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                for (GroceryDealsEntity grocery in groceryList)
+                for (GroceryDealsEntity grocery in _productData.groceryList)
                   GroceryDealsCard(groceryDealsEntity: grocery)
               ],
             ),
@@ -133,14 +89,14 @@ class _StoreTabState extends State<StoreTab> {
           _buildTitleOfDeals(
               'Liquor Member Deals',
               ViewItemScreen(
-                groceryList: liquorList,
+                groceryList: _productData.liquorList,
                 title: 'Liquor',
               )),
           SingleChildScrollView(
             scrollDirection: Axis.horizontal,
             child: Row(
               children: [
-                for (GroceryDealsEntity liquor in liquorList)
+                for (GroceryDealsEntity liquor in _productData.liquorList)
                   GroceryDealsCard(groceryDealsEntity: liquor)
               ],
             ),
