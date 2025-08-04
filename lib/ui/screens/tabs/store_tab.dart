@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:grocery_app/data/product_data.dart';
 import 'package:grocery_app/entities/grocery_deals_entity.dart';
 import 'package:grocery_app/ui/screens/cold_drink_screen.dart';
@@ -121,8 +122,7 @@ class _StoreTabState extends State<StoreTab> {
           ),
           TextButton(
             onPressed: () {
-              Navigator.push(
-                  context, MaterialPageRoute(builder: (context) => screen));
+              Get.to(() => screen);
             },
             child: Text('View All >'),
           )
@@ -144,8 +144,7 @@ class _StoreTabState extends State<StoreTab> {
           ),
           child: IconButton(
             onPressed: () {
-              Navigator.push(context,
-                  MaterialPageRoute(builder: (context) => ColdDrinkScreen()));
+              Get.to(() => ColdDrinkScreen());
             },
             icon: icon,
             style: IconButton.styleFrom(iconSize: 25),
