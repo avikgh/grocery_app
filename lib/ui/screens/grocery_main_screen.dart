@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:grocery_app/ui/screens/notifications_screen.dart';
 import 'package:grocery_app/ui/screens/tabs/profile_tab.dart';
 import 'package:grocery_app/ui/screens/tabs/store_tab.dart';
 
@@ -28,7 +30,9 @@ class GroceryMainScreen extends StatelessWidget {
               ),
             ),
             IconButton(
-              onPressed: () {},
+              onPressed: () {
+                Get.to(() => NotificationsScreen());
+              },
               icon: Icon(
                 Icons.notifications_none,
                 color: Colors.white,

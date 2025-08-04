@@ -122,7 +122,7 @@ class _StoreTabState extends State<StoreTab> {
           ),
           TextButton(
             onPressed: () {
-              Get.to(() => screen);
+              Get.to(() => screen, transition: Transition.rightToLeft);
             },
             child: Text('View All >'),
           )
@@ -144,7 +144,7 @@ class _StoreTabState extends State<StoreTab> {
           ),
           child: IconButton(
             onPressed: () {
-              Get.to(() => ColdDrinkScreen());
+              Get.to(() => ColdDrinkScreen(), transition: Transition.rightToLeft);
             },
             icon: icon,
             style: IconButton.styleFrom(iconSize: 25),
